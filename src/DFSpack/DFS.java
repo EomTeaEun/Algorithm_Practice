@@ -1,7 +1,11 @@
-package DFS;
+package DFSpack;
 
 import Graph.Edge;
 import java.util.*;
+
+/*
+DFS : 깊이 우선 탐색
+ */
 
 public class DFS {
     int N; //그래프 정점의 수
@@ -16,12 +20,12 @@ public class DFS {
             visited [i] = false;
         } for (int i = 0; i < N; i++) {
             if(!visited[i]){
-                dfs(i);
+                dfs(i); //여기서 첫 dfs 를 호출하고 재귀함수로 인접, 인접, 인접, 탐색
             }
         }
     }
 
-    private void dfs(int i){
+    public void dfs(int i){
         visited[i] = true;
         System.out.print(i+" ");
         for(Edge e: graph[i]){
